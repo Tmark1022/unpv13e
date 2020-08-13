@@ -63,5 +63,9 @@ tcpservpoll01:	tcpservpoll01.o
 tsigpipe:	tsigpipe.o
 		${CC} ${CFLAGS} -o $@ tsigpipe.o ${LIBS}
 
+practice_06_05:	practice_06_05.c
+		${CC} ${CFLAGS} -o $@ practice_06_05.c ${LIBS}
+		
+
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
