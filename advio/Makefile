@@ -23,6 +23,10 @@ tcpserv02:	tcpserv02.o str_echo_stdio02.o sig_chld_waitpid.o
 		${CC} ${CFLAGS} -o $@ tcpserv02.o str_echo_stdio02.o \
 			sig_chld_waitpid.o ${LIBS}
 
+practice_14_05:	tcpserv02.o practice_14_05.c sig_chld_waitpid.o
+		${CC} ${CFLAGS} -o $@ tcpserv02.o practice_14_05.c \
+			sig_chld_waitpid.o ${LIBS}
+
 udpcli01:	udpcli01.o dgclitimeo1.o
 		${CC} ${CFLAGS} -o $@ udpcli01.o dgclitimeo1.o ${LIBS}
 
