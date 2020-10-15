@@ -13,7 +13,9 @@ open_output(void)
 	 * Also must set IP_HDRINCL so we can write our own IP headers.
 	 */
 
-	rawfd = Socket(dest->sa_family, SOCK_RAW, 0);
+	// rawfd = Socket(dest->sa_family, SOCK_RAW, 0);
+	// protocol 参数不能为0， 会报错 protocol not support
+	rawfd = Socket(dest->sa_family, SOCK_RAW, IPPROTO_UDP);
 
 	Setsockopt(rawfd, IPPROTO_IP, IP_HDRINCL, &on, sizeof(on));
 }
